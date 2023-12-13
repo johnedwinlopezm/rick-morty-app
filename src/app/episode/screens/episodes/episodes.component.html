@@ -1,0 +1,29 @@
+<div class="container-episode">
+    <div class="title">
+        {{title}}
+    </div>
+    <div class="content" *ngIf="resultEpisode">
+        <div [formGroup]="formFiltros" class="filters" >
+            <div>
+                <input type="text" id="name" name="name" placeholder="Name" formControlName="name">
+            </div>
+            <div>
+                <input type="text" id="type" name="episode" placeholder="episode" formControlName="episode">
+            </div>
+            <div><button class="buttonMini" (click)="filter()">{{filterButton}}</button></div>
+            <div><button class="buttonMini" (click)="clearFilter()">{{cleanFilterButton}}</button></div>
+        </div>
+        <div class="tabla" *ngIf="listEpisodes">
+            <app-titles-table></app-titles-table>
+            <app-info [episode]="episode"  *ngFor="let episode of listEpisodes"></app-info>
+        </div>
+        <div class="buttons">
+            <div *ngIf="resultEpisode?.info?.prev">
+                <button class="button button1" (click)="prevEpisode(resultEpisode.info.prev)" >{{prevButton}}</button>
+            </div>
+            <div *ngIf="resultEpisode?.info?.next">
+                <button class="button button2" (click)="nextEpisode(resultEpisode.info.next)">{{nextButton}}</button>
+            </div>
+        </div>
+    </div>
+</div>

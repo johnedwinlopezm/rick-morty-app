@@ -1,0 +1,19 @@
+<div class="container-home">
+    <div class="toolbar">
+      <div class="h1">{{title}}</div>
+    </div>
+    <div class="content">
+      <div  class="menu">
+        <mat-list>
+        <mat-list-item (click)="characters()">Characters</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item (click)="episodes()">Episodes</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item (click)="locations()">Locations</mat-list-item>
+      </mat-list>
+      </div>
+      <div class="info">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>

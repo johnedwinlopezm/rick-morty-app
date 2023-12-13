@@ -1,0 +1,19 @@
+<div class="container-info" *ngIf="character">
+    <div class="general">
+        <div class="h2-b">General info:</div>
+        <div> <img src="{{character.image}}" /></div>
+        <div>Name: {{character.name}} </div>
+        <div>Status: {{character.status}}</div>
+        <div>Especie: {{character.species}}</div>
+        <div>Type: {{character.type}} </div>
+        <div>Origin: {{character.origin.name}} </div>
+        <div>Location: {{character.location.name}} </div>
+    </div>
+    <div class="episodes">
+        <div class="h2-b">Episodes</div>
+        <div *ngFor="let episode of character.episode">{{episode}} </div>
+    </div>
+    <div>
+        <button class="button" (click)="return()">{{returnButton}}</button>
+    </div>
+</div>

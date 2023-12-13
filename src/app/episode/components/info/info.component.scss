@@ -1,0 +1,45 @@
+.container-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1em;
+    justify-content: space-between;
+    text-align: center;
+    .name{
+        order:1;
+        min-width: 30%;
+        border-color: black;
+        background-color: #c5d6d0;
+    }
+    .date{
+        order:2;
+        min-width: 30%;
+        border-color: black;
+    }
+    .episode{
+        order:3;
+        min-width: 30%;
+        border-color: black;
+        background-color: #c5d6d0;
+    }
+    .button{
+        order:4;
+        min-width: 10%;
+        border-color: black;
+    }
+
+    .buttonMini {
+        border: none;
+        color: white;
+        padding: 0.5em 1.5em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 8px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: #a9bab4;
+    }
+    
+}

@@ -1,0 +1,8 @@
+<div class="container-info" *ngIf="character">
+    <div class="name">{{character.name}}</div>
+    <div class="status">{{character.status}}</div>
+    <div class="specie">{{character.species}}</div>
+    <div class="type">{{character.type}}</div>
+    <div class="gender">{{character.gender}}</div>
+    <div class="button"><button class="buttonMini" (click)="viewInfoCharacter()">{{textButton}}</button></div>
+</div>

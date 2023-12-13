@@ -1,0 +1,6 @@
+<div class="container-info" *ngIf="episode">
+    <div class="name">{{episode.name}}</div>
+    <div class="date">{{episode.air_date}}</div>
+    <div class="episode">{{episode.episode}}</div>
+    <div class="button"><button class="buttonMini" (click)="viewInfoEpisode()">{{textButton}}</button></div>
+</div>

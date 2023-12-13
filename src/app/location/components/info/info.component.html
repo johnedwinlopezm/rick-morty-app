@@ -1,0 +1,6 @@
+<div class="container-info" *ngIf="location">
+    <div class="name">{{location.name}}</div>
+    <div class="type">{{location.type}}</div>
+    <div class="dimension">{{location.dimension}}</div>
+    <div class="button"><button class="buttonMini" (click)="viewInfoLocation()">{{textButton}}</button></div>
+</div>

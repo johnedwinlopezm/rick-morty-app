@@ -1,0 +1,42 @@
+<div class="container-character">
+    <div class="title">
+        {{title}}
+    </div>
+    <div class="content" *ngIf="resultCharacter">
+        <div [formGroup]="formFiltros" class="filters" >
+            <div>
+                <input type="text" id="name" name="name" placeholder="Name" formControlName="name">
+            </div>
+            <div>
+                <select name="status" formControlName="status">
+                    <option  *ngFor="let status of listStatus">{{status}}</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" id="species" name="species" placeholder="Species" formControlName="species">
+            </div>
+            <div>
+                <input type="text" id="type" name="type" placeholder="Type" formControlName="type">
+            </div>
+            <div>
+                <select name="gender" formControlName="gender">
+                    <option  *ngFor="let gender of listGender">{{gender}}</option>
+                </select>
+            </div>
+            <div><button class="buttonMini" (click)="filter()">{{filterButton}}</button></div>
+            <div><button class="buttonMini" (click)="clearFilter()">{{cleanFilterButton}}</button></div>
+        </div>
+        <div class="tabla" *ngIf="listCharacters">
+            <app-titles-table></app-titles-table>
+            <app-info [character]="character"  *ngFor="let character of listCharacters"></app-info>
+        </div>
+        <div class="buttons">
+            <div *ngIf="resultCharacter?.info?.prev">
+                <button class="button button1" (click)="prevCharacter(resultCharacter.info.prev)" >{{prevButton}}</button>
+            </div>
+            <div *ngIf="resultCharacter?.info?.next">
+                <button class="button button2" (click)="nextCharacter(resultCharacter.info.next)">{{nextButton}}</button>
+            </div>
+        </div>
+    </div>
+</div>

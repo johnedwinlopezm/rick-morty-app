@@ -1,0 +1,43 @@
+.container-home{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 10px;
+    min-width: 100%;
+    .toolbar {
+      order: 1;
+      justify-content: center;
+      align-content: center;
+      text-align: center;
+      align-items: center;
+      background-image: url('../../../../assets/images/toolbar.webp');
+      //opacity: 0.6;
+      background-size: 100% 100%;
+      min-width: 100%;
+      min-height: 10em;
+    }
+  
+    .content {
+      order: 2;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1% 5% 1% 5%;
+      .menu {
+        order: 1;
+      }
+      .info {
+        order: 2;
+      }
+    }
+  }
+  
+  .h1 {
+      font-size: 4em;
+      padding: 0px;
+      margin: 0px;
+      line-height: 100%;
+      color: white;
+    }

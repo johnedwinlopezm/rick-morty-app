@@ -1,0 +1,32 @@
+<div class="container-location">
+    <div class="title">
+        {{title}}
+    </div>
+    <div class="content" *ngIf="resultLocation">
+        <div [formGroup]="formFiltros" class="filters" >
+            <div>
+                <input type="text" id="name" name="name" placeholder="Name" formControlName="name">
+            </div>
+            <div>
+                <input type="text" id="type" name="type" placeholder="Type" formControlName="type">
+            </div>
+            <div>
+                <input type="text" id="dimension" name="dimension" placeholder="dimension" formControlName="dimension">
+            </div>
+            <div><button class="buttonMini" (click)="filter()">{{filterButton}}</button></div>
+            <div><button class="buttonMini" (click)="clearFilter()">{{cleanFilterButton}}</button></div>
+        </div>
+        <div class="tabla" *ngIf="listLocations">
+            <app-titles-table></app-titles-table>
+            <app-info [location]="location"  *ngFor="let location of listLocations"></app-info>
+        </div>
+        <div class="buttons">
+            <div *ngIf="resultLocation?.info?.prev">
+                <button class="button button1" (click)="prevlocation(resultLocation.info.prev)" >{{prevButton}}</button>
+            </div>
+            <div *ngIf="resultLocation?.info?.next">
+                <button class="button button2" (click)="nextlocation(resultLocation.info.next)">{{nextButton}}</button>
+            </div>
+        </div>
+    </div>
+</div>
