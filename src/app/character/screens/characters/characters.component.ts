@@ -46,7 +46,7 @@ export class CharactersComponent implements OnInit {
     });
   }
 
-  prevCharacter(url:string) {
+  prevCharacter(url:any) {
     this.characterService.getPrevOrNextCharacter(url).subscribe( result=> {
       if(result) {
         this.resultCharacter = result;
